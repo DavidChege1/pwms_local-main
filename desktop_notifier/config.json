@@ -1,0 +1,5 @@
+{
+    "server_ip": "localhost",
+    "server_port": "9092",
+    "app_name": "PWMS Dispatch Notifier"
+}

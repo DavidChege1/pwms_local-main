@@ -1,0 +1,96 @@
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+.venv/
+venv/
+env/
+bin/
+lib/
+include/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/__pycache__/
+backend/**/*.pyc
+backend/instance/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.installed.cfg
+.pip-wheel-metadata/
+
+# Environment Files
+.env
+.env*
+!.env.example
+
+# Logs
+*.log
+ml_debug_log.txt
+server_log.txt
+logs/
+
+# Syncthing
+.stfolder/
+.stignore
+.stversions/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# IDEs
+.vscode/
+.vscode-test/
+.idea/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# ML Models and Data
+ml_models/
+scratch/
+*.joblib
+*.pkl
+!backend/ml/models/*.joblib
+!backend/ml/models/*.pkl
+
+# Antigravity/AI tools
+.gemini/
+.aider*
+
+# Temporary Analysis Scripts
+check_*.py
+search_*.py
+get_descriptions.py
+ml_training_template.py
+System Optimization Implementation Plan
+planning_documentation.md
+Git_Process
+GIT_WORKFLOW_GUIDE.md
+
+# Databases
+*.db
+*.sqlite
+!backend/data/seeds/*.db
+frontend/vite.config.js.timestamp-1776922391774-77033172d1dc6.mjs
+
+# PyInstaller
+build/
+dist/
+*.spec
+frontend/vite.config.js.timestamp-1777461367999-8d19aef8e07b38.mjs
+frontend/vite.config.js.timestamp-1779258146338-fe50ab9983b29.mjs

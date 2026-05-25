@@ -1,0 +1,8 @@
+customtkinter>=5.2.0
+websockets
+plyer
+pystray
+requests
+Pillow
+pywin32
+pyinstaller

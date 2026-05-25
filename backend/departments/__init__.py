@@ -1,0 +1,1 @@
+# Make departments a package
