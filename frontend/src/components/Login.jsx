@@ -252,7 +252,23 @@ export default function Login({ onLoginSuccess }) {
           </div>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '2.5rem', opacity: 0.6, fontSize: '0.75rem', fontWeight: 700, color: '#94a3b8' }}>
+        {/* Helper Note for Deployed Environment Cold Starts */}
+        <div style={{
+          marginTop: '1.5rem',
+          padding: '0.75rem 1rem',
+          background: 'rgba(240, 249, 255, 0.5)',
+          border: '1px dashed #bae6fd',
+          borderRadius: '12px',
+          fontSize: '0.78rem',
+          color: '#0369a1',
+          lineHeight: '1.4',
+          textAlign: 'center',
+          fontWeight: 600
+        }}>
+          💡 <b>Showcase Note:</b> Our free-tier backend sleeps when inactive. If logging in for the first time, please allow up to <b>50–90 seconds</b> for the cloud server to spin up!
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2rem', opacity: 0.6, fontSize: '0.75rem', fontWeight: 700, color: '#94a3b8' }}>
           Secured Offline Local Demonstration &copy; 2026
         </div>
       </div>
