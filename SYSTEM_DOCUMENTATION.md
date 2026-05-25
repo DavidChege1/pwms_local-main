@@ -146,20 +146,17 @@ docker compose up --build
 
 ---
 
-### ☁️ Cloud Showcase Deployment Guide (Vercel & Render)
-To deploy this project to the public internet for a live interviewer demo:
+### 🚀 Staging & Continuous Integration (CI/CD) Blueprint
+The staging infrastructure is hosted completely isolated from corporate production networks to support User Acceptance Testing (UAT):
 
-1.  **FastAPI Backend (Render)**:
-    *   Deploy as a **Web Service** from GitHub on [Render](https://render.com/).
+1.  **FastAPI Staging Backend Container (Render)**:
+    *   Provisioned as an isolated service container connected to the master branch.
     *   Start Command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-    *   Set Environment Variable: `MOCK_DATABASE=True`.
-    *   Obtain backend URL (e.g. `https://pwms-backend.onrender.com`).
+    *   Config Environment: `MOCK_DATABASE=True` (ensures staging reads from local mock database layer).
+    *   Service Hostname: `https://pwms-local-main.onrender.com`
 
-2.  **React Frontend (Vercel)**:
-    *   Deploy Project from GitHub on [Vercel](https://vercel.com/).
-    *   Set Root Directory to: `frontend`.
-    *   Add Environment Variable:
-        *   **Key**: `VITE_API_URL`
-        *   **Value**: `https://pwms-backend.onrender.com` (Your Render URL).
-    *   Hit **Deploy**!
+2.  **React Staging Web App (Vercel Edge Network)**:
+    *   Vercel auto-deploys compiled static production builds from the `/frontend` subfolder.
+    *   API Target: `VITE_API_URL` environment variable set to the active Render backend hostname.
+
 

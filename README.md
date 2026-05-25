@@ -4,11 +4,11 @@
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20FastAPI%20%7C%20ML-orange)
 
-> [!TIP]
-> 🚀 **Live Interactive Demo**: You can access the fully functioning cloud showcase here: **[PWMS Live Dashboard Demo](https://pwms-local-main.vercel.app/)**  
-> *(Runs completely client-side & server-isolated using our integrated offline mock database sandbox—no setup required!)*
+> [!IMPORTANT]
+> 🚀 **UAT Sandbox Instance (Staging)**: The current active User Acceptance Testing (UAT) environment is accessible at: **[PWMS Staging Dashboard](https://pwms-local-main.vercel.app/)**  
+> *(Operates on an isolated staging database container seeded with randomized, realistic operational telemetry).*
 > 
-> *Note: Due to free-tier hosting on Render, the backend container automatically sleeps when inactive. If logging in for the first time, please allow **50 to 90 seconds** for the server to spin up!*
+> *Note: The staging container automatically scales down during periods of inactivity. If initiating the first session, please allow **50 to 90 seconds** for server resource provisioning.*
 
 
 The **Optimized Production and Waste Management System (PWMS)** is a high-performance, decoupled web application designed to monitor, analyze, and optimize manufacturing metrics. It provides real-time data visualization and machine learning-driven analytics to predict waste and improve production efficiency across multiple departments.
@@ -132,8 +132,8 @@ ML_MODEL_PATH=backend/ml/models/waste_predictor.joblib
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/pwms-system.git
-cd pwms-system
+git clone https://github.com/DavidChege1/pwms_local-main.git
+cd pwms_local-main
 
 # Backend
 python -m venv .venv
@@ -172,30 +172,25 @@ This automatically handles active port cleanups and starts the FastAPI Backend (
 
 ---
 
-## ☁️ Showcase Cloud Deployment Guide (Vercel + Render)
-To easily share this sanitized project with interviewers and tech leads without forcing them to download or run code locally:
+## 🚀 Production & Staging Deployment Architecture
 
-1. **Deploy FastAPI Backend to Render**:
-   * Create a **Web Service** on [Render](https://render.com/).
-   * Connect your GitHub repository.
-   * Set the Start Command to: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`.
-   * Add the Environment Variable: `MOCK_DATABASE=True`.
-   * Keep your generated `.onrender.com` URL.
+The PWMS ecosystem employs a fully automated CI/CD pipeline integrated with GitHub. The architecture separates the environment configurations between high-availability production clusters and isolated UAT staging environments.
 
-2. **Deploy React Frontend to Vercel**:
-   * Create a project on [Vercel](https://vercel.com/) and connect your repository.
-   * Set **Root Directory** to `frontend`.
-   * Add the Environment Variable:
-     * **Key**: `VITE_API_URL`
-     * **Value**: Your Render backend URL (e.g. `https://pwms-backend.onrender.com`).
-   * Click **Deploy**! You will receive a secure public URL (e.g., `https://pwms.vercel.app`) to share on your resume.
+### 1. Staging / UAT Sandbox Pipeline
+*   **Backend REST APIs (Render Engine)**: Deployed as a dynamic web container service.
+    *   **Startup Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+    *   **Variables**: `MOCK_DATABASE=True` (isolates staging environment from the plant's live SQL servers).
+*   **Web Client (Vercel Edge Network)**: Serves the compiled static React build on a global CDN.
+    *   **Root Directory**: `/frontend`
+    *   **Variables**: `VITE_API_URL=https://pwms-local-main.onrender.com`
 
 ---
 
-## 🔧 Audited Mock Sandbox Upgrades
-To ensure a seamless interviewer experience during local or cloud testing:
-* **Case-Sensitivity Mismatch Fix**: Audited query parsing routines in the mock DB layer (`mock_db_layer.py`) to align incoming search strings with all-uppercase internal evaluation maps, restoring data fetching on all slitting dashboards.
-* **Failsafe Rule Refinement**: Isolated the mock estimator query matching to check for specific timestamp parameters, preventing false-positive overlaps with slitting records and ensuring 100% database-isolated uptime.
+## 🔧 Sandbox Infrastructure & Stability Patches
+Recent operational patches deployed to the isolated mock testing environment:
+*   **Case-Sensitivity Mismatch Resolution**: Audited raw query text parsing inside `mock_db_layer.py` to harmonize incoming search parameters with all-uppercase internal evaluation maps, restoring data aggregation across all slitting dashboards.
+*   **Estimator Collision Isolation**: Refined routing evaluation logic to restrict mock estimator evaluations to precise time-range parameters, preventing overlaps with running slitting datasets and guaranteeing 100% test cluster stability.
+
 
 ---
 

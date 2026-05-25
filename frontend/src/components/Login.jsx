@@ -265,7 +265,7 @@ export default function Login({ onLoginSuccess }) {
           textAlign: 'center',
           fontWeight: 600
         }}>
-          💡 <b>Showcase Note:</b> Our free-tier backend sleeps when inactive. If logging in for the first time, please allow up to <b>50–90 seconds</b> for the cloud server to spin up!
+          💡 <b>UAT Sandbox Note:</b> The staging server operates on dynamic container allocations. If initiating the first session, please allow <b>50–90 seconds</b> for backend resource provisioning.
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '2rem', opacity: 0.6, fontSize: '0.75rem', fontWeight: 700, color: '#94a3b8' }}>
