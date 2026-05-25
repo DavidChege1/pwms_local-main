@@ -5,8 +5,11 @@
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20FastAPI%20%7C%20ML-orange)
 
 > [!TIP]
-> 🚀 **Live Interactive Demo**: You can access the fully functioning cloud showcase here: **[PWMS Live Dashboard Demo](https://your-vercel-demo-link.vercel.app)**  
+> 🚀 **Live Interactive Demo**: You can access the fully functioning cloud showcase here: **[PWMS Live Dashboard Demo](https://pwms-local-main.vercel.app/)**  
 > *(Runs completely client-side & server-isolated using our integrated offline mock database sandbox—no setup required!)*
+> 
+> *Note: Due to free-tier hosting on Render, the backend container automatically sleeps when inactive. If logging in for the first time, please allow **50 to 90 seconds** for the server to spin up!*
+
 
 The **Optimized Production and Waste Management System (PWMS)** is a high-performance, decoupled web application designed to monitor, analyze, and optimize manufacturing metrics. It provides real-time data visualization and machine learning-driven analytics to predict waste and improve production efficiency across multiple departments.
 
