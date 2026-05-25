@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:9092`;
+const raw_url = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:9092`;
+const BASE_URL = raw_url.endsWith('/') ? raw_url.slice(0, -1) : raw_url;
 
 /**
  * Common fetch wrapper for standardizing requests

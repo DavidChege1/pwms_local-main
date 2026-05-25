@@ -43,7 +43,7 @@ app = FastAPI(title="Sleeves Department Production System API", lifespan=lifespa
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], # In production, restrict to deployed frontend IP
-    allow_credentials=True,
+    allow_credentials=False, # Set to False to permit wildcard (*) origins safely without browser CORS blockages
     allow_methods=["*"],
     allow_headers=["*"],
 )
