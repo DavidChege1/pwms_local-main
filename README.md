@@ -194,6 +194,4 @@ Recent operational patches deployed to the isolated mock testing environment:
 
 ---
 
-## 📄 License & Support
-This project is proprietary and confidential. For support, please contact the development team.
 
